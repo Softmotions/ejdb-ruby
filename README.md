@@ -13,9 +13,10 @@ Installation
 **(A) Installing directly from sources**
 
 ```
-git clone https://github.com/Softmotions/ejdb.git
-cd ./rbejdb
-make && sudo make install && make check
+git clone https://github.com/Softmotions/ejdb-ruby.git
+cd ./ejdb-ruby
+make  
+sudo make install
 ```
 
 One snippet intro

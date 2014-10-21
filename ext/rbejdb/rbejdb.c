@@ -502,8 +502,8 @@ VALUE EJDB_find_internal(VALUE self, VALUE collName, VALUE queryWrap, VALUE q, V
 }
 
 VALUE EJDB_find_internal_wrapper(VALUE args) {
-    return EJDB_find_internal(rb_ary_pop(args), rb_ary_pop(args), rb_ary_pop(args),
-                              rb_ary_pop(args), rb_ary_pop(args), rb_ary_pop(args));
+    return EJDB_find_internal(RARRAY_AREF(args, 0), RARRAY_AREF(args, 1), RARRAY_AREF(args, 2),
+                              RARRAY_AREF(args, 3), RARRAY_AREF(args, 4), RARRAY_AREF(args, 5));
 }
 
 VALUE EJDB_find_ensure(VALUE queryWrap, VALUE exception) {
@@ -622,7 +622,6 @@ VALUE EJDB_find(int argc, VALUE* argv, VALUE self) {
     VALUE p4;
 
     rb_scan_args(argc, argv, "13", &collName, &q, &p3, &p4);
-
     SafeStringValue(collName);
     q = !NIL_P(q) ? q :rb_hash_new();
     orarr = TYPE(p3) == T_ARRAY ? rb_ary_dup(p3) : rb_ary_new();
@@ -639,7 +638,6 @@ VALUE EJDB_find(int argc, VALUE* argv, VALUE self) {
     rbquery->hintsbson = NULL;
     rbquery->orarrbson = NULL;
     rbquery->orarrlng = 0;
-
     VALUE params = rb_ary_new3(6, self, collName, queryWrap, q, orarr, hints);
 
     // Even if exception raised during find() we will free memory, taken for query

@@ -6,4 +6,4 @@ end
 
 $CFLAGS << ' -Wall'
 CONFIG['warnflags'].gsub!('-Wdeclaration-after-statement', '')
-create_makefile("rbejdb", ARGV[0] || 'src')
+create_makefile("rbejdb")

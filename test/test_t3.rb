@@ -1,15 +1,6 @@
-require "rbejdb"
-require 'test/unit'
+require File.join(File.dirname(__FILE__), 'helper')
 
-TESTDB_DIR = 'testdb'
-
-unless File.exists?(TESTDB_DIR)
-  Dir.mkdir TESTDB_DIR
-end
-
-Dir.chdir TESTDB_DIR
-
-$jb = EJDB.open("tdbt3", EJDB::JBOWRITER | EJDB::JBOCREAT | EJDB::JBOTRUNC)
+$jb = EJDB.open(File.join(TESTDB_DIR, "tdbt3"), EJDB::JBOWRITER | EJDB::JBOCREAT | EJDB::JBOTRUNC)
 
 class EJDBAdvancedTestUnit < Test::Unit::TestCase
   RS = 100000

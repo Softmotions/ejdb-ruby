@@ -2,3 +2,6 @@
 /doc
 *.gem
 *.log
+/tmp
+*.bundle
+/testdb

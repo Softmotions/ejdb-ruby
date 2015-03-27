@@ -40,7 +40,7 @@
  *  our_string_back = secret.to_a.pack("U*")
  */
 
-#include <tcejdb/ejdb_private.h>
+#include <ejdb/ejdb_private.h>
 #include <ruby.h>
 
 #include "rbbson.h"

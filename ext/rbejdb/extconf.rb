@@ -1,6 +1,6 @@
 require "mkmf"
 
-unless have_library('tcejdb')
+unless have_library('ejdb')
   raise "EJDB C library is not installed!"
 end
 

@@ -1,15 +1,8 @@
-/*
- * File:   rbbson.h
- * Author: yudanov
- *
- * Created on March 25, 2013, 2:31 PM
- */
-
 #ifndef RBBSON_H
 #define	RBBSON_H
 
 #include <ruby.h>
-#include <tcejdb/bson.h>
+#include <ejdb/bson.h>
 
 #define RUBY_TO_BSON_AS_QUERY 1
 

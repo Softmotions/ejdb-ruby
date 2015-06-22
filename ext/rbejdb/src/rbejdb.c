@@ -502,8 +502,8 @@ VALUE EJDB_find_internal(VALUE self, VALUE collName, VALUE queryWrap, VALUE q, V
 }
 
 VALUE EJDB_find_internal_wrapper(VALUE args) {
-    return EJDB_find_internal(rb_ary_pop(args), rb_ary_pop(args), rb_ary_pop(args),
-                              rb_ary_pop(args), rb_ary_pop(args), rb_ary_pop(args));
+    return EJDB_find_internal(rb_ary_entry(args, 0), rb_ary_entry(args, 1), rb_ary_entry(args, 2),
+                              rb_ary_entry(args, 3), rb_ary_entry(args, 4), rb_ary_entry(args, 5));
 }
 
 VALUE EJDB_find_ensure(VALUE queryWrap, VALUE exception) {

@@ -17,4 +17,5 @@ Gem::Specification.new do |spec|
     --exclude .*\.o
     --exclude .*\.so
   ]
+  spec.add_development_dependency 'test-unit', '~> 3.0', '>= 3.1.2'
 end
